@@ -1,0 +1,21 @@
+@import '../AppGlobalStyles/mixins';
+
+.header {
+	@include flexAlign(row, default, space-between);
+	position: fixed;
+	top: 0;
+	right: 0;
+	z-index: 100;
+
+	padding: 0 30px;
+	width: calc(100% - 240px);
+	height: var(--header-height);
+
+	background-color: transparent;
+	box-shadow: none;
+}
+
+.header.is-thicken {
+	background-color: var(--layout-bg);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
+}

@@ -1,0 +1,14 @@
+.setting__subnav {
+  width: 100%;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-primary);
+
+  .setting__item {
+    color: var(--text-secondary);
+    padding: 10px 20px 10px 17px;
+
+    &:hover {
+      color: var(--text-item-hover);
+    }
+  }
+}

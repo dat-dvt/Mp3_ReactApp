@@ -1,0 +1,25 @@
+/******** Tab explore content ********/
+/* Explore slide show */
+.app__container-content {
+	height: 100%;
+	padding: 70px 4vw 0;
+}
+
+/* Playlist header */
+.media__info.explore-playlist--info {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.explore-playlist--info .row__info-name {
+	font-weight: 700;
+}
+
+.explore-playlist--info .info__artist {
+	font-size: 1.4rem;
+	display: block;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}

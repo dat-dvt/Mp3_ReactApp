@@ -1,0 +1,9 @@
+.player__container {
+	display: flex;
+	padding: 0 20px;
+	cursor: pointer;
+	align-items: center;
+	height: var(--player-height);
+	justify-content: space-between;
+	background-color: var(--player-bg);
+}

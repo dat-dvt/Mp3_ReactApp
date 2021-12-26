@@ -1,0 +1,67 @@
+.option-btn {
+	width: 32px;
+	height: 32px;
+	padding: 9px 10px;
+	margin: 0 2px;
+	cursor: pointer;
+	border-radius: 50%;
+	color: var(--text-color);
+	background-color: transparent;
+
+	&:hover {
+		background-color: var(--bg-content-color);
+	}
+
+	.btn--icon {
+		width: 13px;
+		height: 13px;
+		padding-top: 1px;
+		font-size: 1.3rem;
+		text-align: center;
+		line-height: 1.3rem;
+		display: inline-block;
+		color: var(--text-color);
+
+		&.primary {
+			&.icon--mic,
+			&.icon--heart {
+				color: var(--purple-primary);
+			}
+		}
+	}
+}
+
+/* Playlist item actions */
+.action-btn {
+	width: 30px;
+	height: 30px;
+	margin: 0;
+	padding: 6px;
+	cursor: pointer;
+	border-radius: 50%;
+	background-color: transparent;
+	color: var(--white-color);
+
+	&:hover {
+		background-color: rgba(255, 255, 255, 0.3);
+	}
+
+	.btn--icon {
+		height: 18px;
+		padding-top: 1px;
+		font-size: 1.8rem;
+		text-align: center;
+		line-height: 1.8rem;
+		display: inline-block;
+
+		&:hover {
+			background: none;
+		}
+
+		&.primary {
+			&.icon--heart {
+				color: var(--purple-primary);
+			}
+		}
+	}
+}

@@ -1,0 +1,22 @@
+%flexCenter {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+%button {
+	border: none;
+	outline: none;
+	display: flex;
+	cursor: pointer;
+	font-size: 1.4rem;
+	line-height: 1.4rem;
+	align-items: center;
+	border-radius: 100px;
+	text-decoration: none;
+	justify-content: center;
+	text-transform: uppercase;
+	color: var(--text-color);
+	background-color: var(--bg-content-color);
+	-webkit-tap-highlight-color: transparent;
+}

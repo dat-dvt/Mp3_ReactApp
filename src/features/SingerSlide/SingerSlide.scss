@@ -1,0 +1,27 @@
+/* Singer slide */
+.singer__slide-row {
+	position: relative;
+
+	.slide__move-btn:hover {
+		opacity: 0.8;
+	}
+
+	&:hover {
+		.singer__slide-move {
+			display: block;
+		}
+	}
+}
+
+.singer-slide--container {
+	overflow: visible;
+	transition: transform 2s linear;
+}
+
+.singer__slide-move {
+	display: none;
+}
+
+.singer__slide-item .row__item-display {
+	border-radius: 8px;
+}

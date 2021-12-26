@@ -1,0 +1,56 @@
+/* Radio */
+.row__item.item--radio {
+	margin-bottom: 10px;
+}
+
+.row__item-info.radio--info {
+	flex: 0;
+	margin-top: 20px;
+}
+
+.row__item-info.radio--info .info__title {
+	width: 100%;
+	font-size: 1.6rem;
+	line-height: 2.1rem;
+	font-weight: 600;
+}
+
+.row__item-info.radio--info .row__info-creator {
+	line-height: 15px;
+}
+
+.item--has-attach:hover .row__item-img {
+	transform: scale(1.12, 1.12);
+}
+
+.radio__label {
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	z-index: 5;
+	width: 34px;
+	height: 16px;
+	font-size: 1rem;
+	text-align: center;
+	border-radius: 4px;
+	line-height: 1.6rem;
+	background-color: red;
+	color: var(--white-color);
+	transform: translate(-50%, -50%);
+}
+
+.radio__logo {
+	top: 100%;
+	left: 100%;
+	z-index: 5;
+	width: 46px;
+	height: 46px;
+	overflow: hidden;
+	position: absolute;
+	transform: translate(-100%, -100%);
+}
+
+.radio__logo-img {
+	/* width: 100%; */
+	padding-top: 100%;
+}

@@ -1,0 +1,76 @@
+/* Content playlist */
+.container__playlist {
+	flex-grow: 1;
+	min-width: 0;
+	height: 100%;
+	display: flex;
+	flex-shrink: 1;
+	flex-direction: column;
+}
+
+.playlist__header {
+	width: 100%;
+	height: 46px;
+	padding: 10px;
+	font-weight: 500;
+	font-size: 1.2rem;
+	display: flex;
+	color: var(--text-secondary);
+	text-transform: uppercase;
+	box-shadow: 0 1px 2px var(--bg-color);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+	&-title {
+		width: 50%;
+		padding-left: 26px;
+		line-height: 2.5rem;
+	}
+
+	&-time {
+		line-height: 2.5rem;
+		flex: 1;
+	}
+
+	&-options {
+		min-width: 24%;
+		text-align: center;
+	}
+}
+
+.playlist__list {
+	flex: 1;
+	display: flex;
+	font-weight: 500;
+	font-size: 1.2rem;
+	flex-direction: column;
+	overflow: hidden overlay;
+	scroll-behavior: smooth;
+	justify-content: flex-start;
+	will-change: scroll-position;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+
+	&:hover::-webkit-scrollbar {
+		display: block;
+		width: 4px;
+	}
+
+	/* Track */
+	&::-webkit-scrollbar-track {
+		border-radius: 10px;
+		background: transparent;
+	}
+
+	/* Handle */
+	&::-webkit-scrollbar-thumb {
+		border-radius: 10px;
+		background: #888;
+	}
+
+	/* Handle on hover */
+	&::-webkit-scrollbar-thumb:hover {
+		background: #555;
+	}
+}

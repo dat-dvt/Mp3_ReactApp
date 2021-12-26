@@ -1,0 +1,25 @@
+/* Footer CSS */
+.player {
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 400;
+	background-position: 50%;
+	background-repeat: repeat-x;
+	background-size: 1920px auto;
+	background-color: var(--layout-bg);
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+	.icon-pause {
+		display: none;
+	}
+
+	&.playing .icon-pause {
+		display: inline-block;
+	}
+
+	&.playing .icon-play {
+		display: none;
+	}
+}

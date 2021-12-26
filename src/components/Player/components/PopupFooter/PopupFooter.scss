@@ -1,0 +1,26 @@
+.player__popup .player__popup-footer {
+	width: 100%;
+	display: flex;
+	padding: 0 20px;
+	align-items: center;
+	justify-content: center;
+	background-position: 50%;
+	background-repeat: repeat-x;
+	height: var(--player-height);
+	background-size: 1920px auto;
+	background-color: var(--player-bg);
+
+	.player__right,
+	.player__left {
+		width: 30%;
+	}
+
+	.player__control {
+		flex: 1;
+		flex-direction: column-reverse;
+	}
+
+	.progress-block {
+		max-width: 530px;
+	}
+}

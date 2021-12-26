@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import clsx from 'clsx';
+import GlobalStyles from 'components/AppGlobalStyles';
+import Container from 'components/Container';
+import Header from 'components/Header';
+import Player from 'components/Player';
+import Sidebar from 'components/Sidebar';
+import { confirmFirstLoading } from 'configSlice';
+import ThemeModal from 'features/ThemeModal';
+import Toast from 'features/Toast';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { currentThemeSelector } from 'selectors/themeSelector';
+import { applyTheme } from 'utils/theme';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const dispatch = useDispatch();
+	const currentTheme = useSelector(currentThemeSelector);
+
+	useEffect(() => {
+		applyTheme(currentTheme.colors);
+	}, [currentTheme]);
+
+	useEffect(() => {
+		dispatch(confirmFirstLoading());
+		// eslint-disable-next-line
+	}, []);
+	return (
+		<GlobalStyles>
+			<div
+				className={clsx('app', 'grid', {
+					'has__theme-img': !!currentTheme.image,
+				})}
+				style={{
+					backgroundImage: currentTheme.image ? `url("${currentTheme.image}")` : 'none',
+				}}
+			>
+				<Header />
+				<Sidebar />
+				<Container />
+				<Player />
+				<ThemeModal />
+				<Toast />
+			</div>
+		</GlobalStyles>
+	);
 }
 
 export default App;

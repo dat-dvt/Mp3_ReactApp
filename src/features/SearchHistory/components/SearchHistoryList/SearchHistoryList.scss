@@ -1,0 +1,54 @@
+@import 'components/AppGlobalStyles/mixins';
+
+.header__search-input:focus ~ .header__search-history {
+  display: block;
+}
+
+.header__search-history {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+
+  z-index: 300;
+  display: none;
+  padding-top: 40px;
+  border-radius: 20px;
+
+  background-color: var(--primary-bg);
+
+  .header__search-list {
+    @include flexAlign(column, flex-start, center);
+    width: 100%;
+    margin: 0;
+    list-style: none;
+    padding: 13px 10px;
+
+    .header__search-item {
+      @include flexAlign(row, center, flex-start);
+      width: 100%;
+
+      padding: 8px 10px;
+      border-radius: 4px;
+
+      &:hover {
+        background-color: var(--bg-content-color);
+      }
+
+      .header__item-icon {
+        font-size: 1.6rem;
+        margin-right: 10px;
+        line-height: 1.6rem;
+        color: var(--text-secondary);
+      }
+
+      .header__item-link {
+        flex: 1;
+        font-size: 1.4rem;
+        line-height: 2.1rem;
+        text-decoration: none;
+        color: var(--text-color);
+      }
+    }
+  }
+}

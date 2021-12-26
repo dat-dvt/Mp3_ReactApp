@@ -1,0 +1,83 @@
+.playlist__list-charts {
+	flex: 1;
+	display: flex;
+	font-weight: 500;
+	font-size: 1.2rem;
+	flex-direction: column;
+	overflow: hidden overlay;
+	scroll-behavior: smooth;
+	justify-content: flex-start;
+	will-change: scroll-position;
+}
+
+.playlist__list-charts::-webkit-scrollbar {
+	display: none;
+}
+
+.playlist__list-charts:hover::-webkit-scrollbar {
+	display: block;
+	width: 4px;
+}
+
+/* Track */
+.playlist__list-charts::-webkit-scrollbar-track {
+	border-radius: 10px;
+	background: transparent;
+}
+
+/* Handle */
+.playlist__list-charts::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background: #888;
+}
+
+/* Handle on hover */
+.playlist__list-charts::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
+
+.playlist__song-rank {
+	height: 100%;
+	display: flex;
+	cursor: default;
+	margin-right: 15px;
+	align-items: center;
+}
+
+.playlist__rank-number {
+	width: 60px;
+	font-size: 3.2rem;
+	line-height: 4rem;
+	font-weight: 900;
+	text-align: center;
+	color: transparent;
+	font-family: 'Roboto', sans-serif;
+}
+
+.playlist__rank-icon {
+	width: 18px;
+	height: 100%;
+	font-size: 1.2rem;
+	color: var(--text-secondary);
+}
+
+.charts__expand {
+	width: 100%;
+	display: flex;
+}
+
+.charts__expand-btn.button {
+	margin: auto;
+	font-weight: 500;
+	font-size: 1.4rem;
+	padding: 8px 25px;
+	line-height: 2.2rem;
+	text-transform: none;
+	color: var(--text-item-hover);
+	background-color: transparent;
+	border: 1px solid var(--text-item-hover);
+}
+
+.charts__expand-btn.button:hover {
+	background-color: var(--bg-content-color);
+}

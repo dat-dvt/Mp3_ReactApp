@@ -1,0 +1,41 @@
+/* Tab charts */
+.app__container.tab--charts .app__container-content {
+	padding-top: 110px;
+}
+
+.charts__container {
+	padding-bottom: 30px;
+}
+
+.chart__container-header {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.chart__header-name {
+	margin: 0;
+	font-size: 4rem;
+	font-weight: 800;
+	line-height: 4.9rem;
+	color: var(--text-item-hover);
+}
+
+.chart__header-btn {
+	width: 40px;
+	height: 40px;
+	display: flex;
+	cursor: pointer;
+	margin-left: 5px;
+	border-radius: 50%;
+	background-color: var(--purple-primary);
+}
+
+.chart__header-icon {
+	margin: auto;
+	width: 22px;
+	height: 22px;
+	font-size: 2.2rem;
+	color: var(--white-color);
+}

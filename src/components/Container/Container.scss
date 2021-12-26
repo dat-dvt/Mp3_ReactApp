@@ -1,0 +1,63 @@
+/* App container */
+.app__container {
+	position: relative;
+	top: 0;
+	flex: 1;
+	left: 0;
+	right: 0;
+	height: 100%;
+	display: block;
+	scroll-behavior: smooth;
+	overflow: hidden overlay;
+	will-change: scroll-position;
+	overflow-anchor: none !important;
+	scroll-snap-stop: normal !important;
+	scroll-behavior: unset !important;
+	overscroll-behavior: unset !important;
+}
+
+.app__container::-webkit-scrollbar {
+	width: 4px;
+}
+
+/* Track */
+.app__container::-webkit-scrollbar-track {
+	border-radius: 10px;
+	background: transparent;
+}
+
+/* Handle */
+.app__container::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background: var(--sidebar-bg);
+}
+
+/* Handle on hover */
+.app__container::-webkit-scrollbar-thumb:hover {
+	background: var(--sidebar-bg);
+}
+
+/* Content CSS */
+.content {
+	display: flex;
+	flex-direction: column;
+	padding: 205px 0 0;
+}
+
+/* Content container */
+.content__container {
+	width: 100%;
+	padding: 0 4vw 0;
+}
+
+.container__control {
+	margin-bottom: 50px;
+}
+
+.container__section {
+}
+
+/* Container album playlist */
+.album__section-playlist {
+	position: relative;
+}

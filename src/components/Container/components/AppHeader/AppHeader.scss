@@ -1,0 +1,136 @@
+/* App container Header */
+.app__header {
+  width: 100%;
+  padding-top: 85px;
+  position: relative;
+
+  &-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 180px;
+    filter: blur(50px);
+  }
+
+  &-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.6;
+    width: 100%;
+    height: 290px;
+    background-color: var(--layout-bg);
+  }
+
+  &-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 290px;
+  }
+
+  &-user {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 205px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  &-actions {
+    position: absolute;
+    right: 30px;
+    top: 85px;
+    display: flex;
+    align-items: center;
+
+    a.button {
+      line-height: 1.5rem;
+    }
+
+    a.button + a.button {
+      margin-left: 5px;
+    }
+
+    a + a:not(.button) {
+      margin-left: 7px;
+    }
+  }
+
+  &-options {
+    height: 28px;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 50%;
+    position: relative;
+    background-color: var(--bg-content-color);
+    border: 1px solid var(--bg-content-color);
+
+    i {
+      font-size: 1.6rem;
+      color: var(--text-color);
+    }
+  }
+}
+
+.has__theme-img .app__header-overlay,
+.has__theme-img .app__header-bg {
+  display: none;
+}
+
+.app__user-avatar {
+  padding: 4px;
+  height: 103px;
+}
+
+.app__user-img {
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+}
+
+.app__user-name {
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 3.8rem;
+  margin: 10px 0 5px;
+  color: var(--text-color);
+}
+
+.option__log-out {
+  right: 0;
+  width: 210px;
+  height: 56px;
+  display: none;
+  padding: 16px 15px;
+  position: absolute;
+  border-radius: 8px;
+  align-items: center;
+  top: calc(100% + 5px);
+  justify-content: flex-start;
+  color: var(--navigation-text);
+  background-color: var(--primary-bg);
+
+  &.open {
+    display: flex;
+  }
+
+  span {
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+  }
+
+  .log-out__icon {
+    font-size: 2.4rem;
+    margin-right: 10px;
+    line-height: 4.4rem;
+    -webkit-text-stroke: 0.5px var(--primary-bg);
+  }
+}

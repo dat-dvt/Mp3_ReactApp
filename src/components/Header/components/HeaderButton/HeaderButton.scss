@@ -1,0 +1,17 @@
+.header__button {
+  padding: 0;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+
+  &-icon {
+    width: 24px;
+    height: 25px;
+    display: block;
+    text-align: center;
+    font-size: 2.2rem;
+    margin-right: 20px;
+    color: var(--text-color);
+  }
+}

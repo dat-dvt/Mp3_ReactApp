@@ -1,0 +1,96 @@
+@import 'components/AppGlobalStyles/mixins';
+
+.header__search {
+  @include flexAlign(row, center);
+  width: 100%;
+  height: 40px;
+  max-width: 540px;
+  position: relative;
+
+  z-index: 300;
+  border-radius: 20px;
+  border: 1px solid transparent;
+
+  color: var(--white-color);
+  background: var(--bg-content-color);
+
+  &-btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    order: 1;
+    z-index: 400;
+
+    display: flex;
+    height: 38px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+
+    background-color: transparent;
+    color: var(--placeholder-text);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  &-icon {
+    display: block;
+    margin: auto;
+    cursor: pointer;
+    font-size: 2rem;
+    padding: 1px 9px 1px;
+  }
+
+  &-input {
+    position: absolute;
+    top: 0;
+    left: 38px;
+    z-index: 400;
+
+    flex: 1;
+    order: 2;
+    height: 38px;
+    width: calc(100% - 38px);
+
+    border: none;
+    outline: none;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    line-height: 4rem;
+    font-size: 1.4rem;
+    padding: 0 9px 0 0;
+
+    background: transparent;
+    color: var(--text-color);
+
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+    &:focus::placeholder {
+      color: var(--placeholder-text);
+      opacity: 1;
+    }
+
+    &:focus ~ .header__search-btn {
+      color: var(--text-color);
+    }
+
+    &:focus ~ .header__search-btn .header__search-icon {
+      -webkit-text-stroke: 0.5px var(--primary-bg);
+    }
+
+    &::placeholder {
+      /* Chrome, Firefox, Opera, Safari 10.1+ */
+      opacity: 1; /* Firefox */
+      color: var(--placeholder-text);
+    }
+    &:-ms-input-placeholder {
+      /* Internet Explorer 10-11 */
+      color: var(--placeholder-text);
+    }
+    &::-ms-input-placeholder {
+      /* Microsoft Edge */
+      color: var(--placeholder-text);
+    }
+  }
+}

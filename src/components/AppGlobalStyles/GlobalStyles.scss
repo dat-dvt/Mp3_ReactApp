@@ -1,0 +1,14 @@
+@import './mixins';
+@import './extends';
+
+/* Main CSS */
+.app {
+  display: flex;
+  overflow: hidden;
+  background-repeat: repeat;
+  background-size: 1920px auto;
+  will-change: scroll-position;
+  background-color: var(--layout-bg);
+  -webkit-tap-highlight-color: transparent;
+  height: calc(100vh - var(--player-height));
+}

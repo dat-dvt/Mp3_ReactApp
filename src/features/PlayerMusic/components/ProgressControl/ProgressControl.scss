@@ -1,0 +1,95 @@
+.progress-block {
+	height: 18px;
+	width: 100%;
+	display: flex;
+	margin-bottom: 5px;
+	position: relative;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.progress__track {
+	left: 50%;
+	height: 3px;
+	border-radius: 20px;
+	position: absolute;
+	transform: translate(-50%, 0);
+	background: var(--bg-content-color);
+
+	&.song--track {
+		width: calc(100% - 130px);
+	}
+
+	&-update {
+		top: 0;
+		left: 0;
+		width: 0;
+		height: 3px;
+		border-radius: 20px;
+		position: absolute;
+		background-color: var(--text-item-hover);
+
+		&::after {
+			content: '';
+			top: 49.9%;
+			right: 0;
+			width: 12px;
+			height: 12px;
+			display: none;
+			border-radius: 50%;
+			position: absolute;
+			transform: translate(50%, -50%);
+			background-color: var(--text-item-hover);
+		}
+	}
+}
+
+.durationtime,
+.tracktime {
+	width: 55px;
+	margin: 0 5px;
+	display: block;
+	font-size: 1.2rem;
+	text-align: center;
+	color: var(--text-color);
+}
+
+.progress {
+	flex: 1;
+	opacity: 1;
+	z-index: 5;
+	height: 18px;
+	outline: none;
+	cursor: pointer;
+	border-radius: 2px;
+	will-change: opacity;
+	-webkit-appearance: none;
+	-webkit-transition: 0.2s;
+	transition: opacity 0.2s;
+	background-color: transparent;
+	-webkit-tap-highlight-color: transparent;
+
+	&:hover ~ .progress__track {
+		height: 5px;
+		border-radius: 100px;
+	}
+
+	&:hover ~ .progress__track .progress__track-update {
+		height: 5px;
+		border-radius: 100px;
+	}
+
+	&:hover ~ .progress__track .progress__track-update::after {
+		display: block;
+	}
+
+	&::-webkit-slider-thumb {
+		appearance: none;
+		width: 1px;
+		height: 18px;
+		cursor: pointer;
+		border-radius: 999px;
+		-webkit-appearance: none;
+		background-color: transparent;
+	}
+}
