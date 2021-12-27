@@ -5,9 +5,10 @@ import Header from 'components/Header';
 import Player from 'components/Player';
 import Sidebar from 'components/Sidebar';
 import { confirmFirstLoading } from 'configSlice';
+import LoadingPage from 'features/LoadingPage';
 import ThemeModal from 'features/ThemeModal';
 import Toast from 'features/Toast';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { currentThemeSelector } from 'selectors/themeSelector';
 import { applyTheme } from 'utils/theme';
@@ -15,10 +16,22 @@ import { applyTheme } from 'utils/theme';
 function App() {
 	const dispatch = useDispatch();
 	const currentTheme = useSelector(currentThemeSelector);
+	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
 		applyTheme(currentTheme.colors);
 	}, [currentTheme]);
+
+	useEffect(() => {
+		const timerId = setInterval(() => {
+			if (document.readyState === 'complete') {
+				setLoading(false);
+				clearInterval(timerId);
+			}
+		}, 100);
+
+		return () => clearInterval(timerId);
+	}, []);
 
 	useEffect(() => {
 		dispatch(confirmFirstLoading());
@@ -26,21 +39,25 @@ function App() {
 	}, []);
 	return (
 		<GlobalStyles>
-			<div
-				className={clsx('app', 'grid', {
-					'has__theme-img': !!currentTheme.image,
-				})}
-				style={{
-					backgroundImage: currentTheme.image ? `url("${currentTheme.image}")` : 'none',
-				}}
-			>
-				<Header />
-				<Sidebar />
-				<Container />
-				<Player />
-				<ThemeModal />
-				<Toast />
-			</div>
+			{loading ? (
+				<LoadingPage />
+			) : (
+				<div
+					className={clsx('app', 'grid', {
+						'has__theme-img': !!currentTheme.image,
+					})}
+					style={{
+						backgroundImage: currentTheme.image ? `url("${currentTheme.image}")` : 'none',
+					}}
+				>
+					<Header />
+					<Sidebar />
+					<Container />
+					<Player />
+					<ThemeModal />
+					<Toast />
+				</div>
+			)}
 		</GlobalStyles>
 	);
 }

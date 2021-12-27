@@ -56,7 +56,7 @@
 	white-space: nowrap;
 	text-decoration: none;
 	color: var(--text-color);
-	transition: all 0.05s linear;
+	transition: color 0.05s linear;
 
 	&.active {
 		margin-left: 0;
