@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { getSlideIndex } from 'utils';
 import MvList from './components/MvList';
 
-function Mv({ optionalClass }) {
+function Mv({ optionalClass = '', sectionName = '', noWrap = false, navigable = false }) {
 	const mvList = useSelector(state => state.personalMv.list);
 	const [slideIndex, setSlideIndex] = useState(0);
 	const [step] = useState(3);
@@ -28,9 +28,10 @@ function Mv({ optionalClass }) {
 					onChangeIndex={handleChangeIndex}
 					listLength={mvList.length}
 					slideIndex={slideIndex}
-					sectionName="Mv"
+					sectionName={sectionName}
 					step={step}
-					navigable
+					noWrap={noWrap}
+					navigable={navigable}
 				/>
 			</div>
 			<div className="col l-12 m-12 c-12">

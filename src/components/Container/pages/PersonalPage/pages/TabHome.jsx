@@ -15,11 +15,11 @@ function TabHome() {
 
 			<Playlist playlistList={playlistList} hasCreateItem noWrap sectionName="Playlist" navigable />
 
-			<Album optionalClass={'mt-50'} />
+			<Album optionalClass={'mt-50'} noWrap sectionName="Album" navigable />
 
-			<Mv optionalClass={'mt-50'} />
+			<Mv optionalClass={'mt-50'} noWrap sectionName="MV" navigable />
 
-			<Artist optionalClass={'mt-30'} />
+			<Artist optionalClass={'mt-30'} noWrap sectionName="Artist" navigable />
 		</div>
 	);
 }

@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { getSlideIndex } from 'utils';
 import ArtistList from './components/ArtistList';
 
-function Artist({ optionalClass }) {
+function Artist({ optionalClass, sectionName = '', noWrap = false, navigable = false }) {
 	const artistList = useSelector(state => state.personalArtist.list);
 	const [slideIndex, setSlideIndex] = useState(0);
 	const [step] = useState(5);
@@ -28,9 +28,10 @@ function Artist({ optionalClass }) {
 					onChangeIndex={handleChangeIndex}
 					listLength={artistList.length}
 					slideIndex={slideIndex}
-					sectionName="Artist"
+					sectionName={sectionName}
 					step={step}
-					navigable
+					noWrap={noWrap}
+					navigable={navigable}
 				/>
 			</div>
 			<div className="col l-12 m-12 c-12">
