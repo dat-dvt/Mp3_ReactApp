@@ -23,41 +23,35 @@ function App() {
 	}, [currentTheme]);
 
 	useEffect(() => {
-		const timerId = setInterval(() => {
-			if (document.readyState === 'complete') {
-				setLoading(false);
-				clearInterval(timerId);
-			}
-		}, 100);
-
-		return () => clearInterval(timerId);
-	}, []);
-
-	useEffect(() => {
 		dispatch(confirmFirstLoading());
 		// eslint-disable-next-line
 	}, []);
+
+	useEffect(() => {
+		window.addEventListener('load', () => {
+			setLoading(false);
+		});
+	}, []);
+
 	return (
 		<GlobalStyles>
-			{loading ? (
-				<LoadingPage />
-			) : (
-				<div
-					className={clsx('app', 'grid', {
-						'has__theme-img': !!currentTheme.image,
-					})}
-					style={{
-						backgroundImage: currentTheme.image ? `url("${currentTheme.image}")` : 'none',
-					}}
-				>
-					<Header />
-					<Sidebar />
-					<Container />
-					<Player />
-					<ThemeModal />
-					<Toast />
-				</div>
-			)}
+			{loading && <LoadingPage />}
+
+			<div
+				className={clsx('app', 'grid', {
+					'has__theme-img': !!currentTheme.image,
+				})}
+				style={{
+					backgroundImage: currentTheme.image ? `url("${currentTheme.image}")` : 'none',
+				}}
+			>
+				<Header />
+				<Sidebar />
+				<Container />
+				<Player />
+				<ThemeModal />
+				<Toast />
+			</div>
 		</GlobalStyles>
 	);
 }
